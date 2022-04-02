@@ -4,51 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
+    <title>회원가입</title>    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section>
-        <h1>SIGN-IN 회원가입</h1>
-        <article class="sign-in">
-            <h2>로그인 정보</h2>
-            <label for="id">아이디</label>
-            <input type="text" name="아이디" id="ID">
-            <input type="button" value="중복확인"><br>
-            <label for="PW">비밀번호</label>
-            <input type="password" name="비밀번호" id="PW"><br>
-            <label for="PW-confirm">비밀번호 확인</label>
-            <input type="password" name="비밀번호 확인" id="PW-confirm"><br>
-            <h3>성별</h3>
-            <label for="male">남</label>
-            <input type="radio" name="성별" id="male" value="남">
-            <label for="female">여</label>
-            <input type="radio" name="성별" id="female" value="여">
-            <h3>연령대</h3>
-            <input type="radio" name="연령대" id="10s" value="10s">
-            <label for="10s">10대</label><br>
-            <input type="radio" name="연령대" id="20s" value="20s">
-            <label for="20s">20대</label><br>
-            <input type="radio" name="연령대" id="30s" value="30s"><label for="30s">30대</label><br>
-            <input type="radio" name="연령대" id="over 40s" value="over 40s"><label for="over 40s">40대 이상</label><br>
+        <header class="sign-in"><h1>SIGN-IN</h1></header>
+        <img class="kirby" src="./Kirby_icon.png" alt="cute kirby">
+        <article class="log-in">
+            <form action="">
+                <fieldset class="log-in info">
+                    <legend><h2>LOG-IN INFO</h2></legend>
+                    <input class="type-in"type="text" placeholder="ID" id="ID">                    
+                    <input class="btn" type="button" value="중복확인"><br>
+                    <input class="type-in" type="password" placeholder="PW" name="password" id="PW"><br>
+                    <input class="type-in" type="password" name="password-confirm" placeholder="PW Confirm"id="PW-confirm"><br>
+                    <h3>LIKELION MEMBERSHIP</h3>
+                    <input type="radio" name="member" id="memberyes" value="memberyes"><label for="memberyes">Yes</label>
+                    <input type="radio" name="member" id="memberno" value="memberno">
+                    <label for="memberno">No</label>
+                    <h3>BIRTHDAY</h3>
+                    <input type="date" name="" id="">
+                    <h3>PROGRAMMING LANGUAGE</h3>
+                    <input type="checkbox" name="HTML/CSS" id="HTML/CSS" value="HTML/CSS"> <label for="HTML/CSS">HTML/CSS</label>
+                    <input type="checkbox" name="JavaScript" id="JavaScript" value="JavaScript"> <label for="JavaScript">JavaScript</label>
+                    <input type="checkbox" name="Python" id="Python" value="Python"> <label for="Python">Python</label>
+                    <input type="checkbox" name="Etc" id="Etc" value="Etc"> <label for="Etc">Etc</label>
+                </fieldset>
+            </form>
         </article>
         <article class="agreement">
-        <h2>약관 동의</h2>
-            <a href="약관동의.html">개인정보처리방침 약관</a> 에 
-            <input type="radio" name="agree-privacy" id="agree-privacy-O" value="agree">
-            <label for="agree-privacy-O">동의합니다</label>
-            <input type="radio" name="agree-privacy" id="agree-privacy-X" value="disagree">
-            <label for="agree-privacy-X">동의하지 않습니다</label>
-            <br> 
-            <a href="약관동의.html">이용 약관</a> 
-            에 
-            <input type="radio" name="agree-userguide" id="agree-userguide-O" value="agree"><label for="agree-userguide-O">동의합니다</label>
-            <input type="radio" name="agree-userguide" id="agree-userguide-X" value="disagree"><label for="agree-userguide-X">동의하지 않습니다</label>
-            <br>
-            <input type="checkbox" name="소식알림을 받겠습니다" id="notification" value="notification">
-            <label for="notification">소식알림을 받겠습니다</label>
-            <br>
+            <form action="">
+                <fieldset class="agreement">
+                    <legend><h2>AGREEMENT ON LEGAL TERMS</h2></legend>
+                    <a href="약관동의.html">개인정보처리방침 약관</a> 에 
+                    <input type="radio" name="agree-privacy" id="agree-privacy-O" value="agree">
+                    <label for="agree-privacy-O">동의합니다</label>
+                    <input type="radio" name="agree-privacy" id="agree-privacy-X" value="disagree">
+                    <label for="agree-privacy-X">동의하지 않습니다</label>
+                    <br> 
+                    <a href="약관동의.html">이용 약관</a> 
+                    에 
+                    <input type="radio" name="agree-userguide" id="agree-userguide-O" value="agree"><label for="agree-userguide-O">동의합니다</label>
+                    <input type="radio" name="agree-userguide" id="agree-userguide-X" value="disagree"><label for="agree-userguide-X">동의하지 않습니다</label>
+                    <br>
+                    <input type="checkbox" name="소식알림을 받겠습니다" id="notification" value="notification">
+                    <label for="notification">소식알림을 받겠습니다</label>   
+                </fieldset>
+            </form>
         </article>
-        <input type="button" value="회원가입하기">
+        <input class="button" type="button" value="회원가입하기">
     </section>
 </body>
 </html>
