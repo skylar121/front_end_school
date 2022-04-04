@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구글폼</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <h1>나와 잘 맞는 회사는?</h1>
+    <p>가고 싶은 회사에 대한 호감도를 조사합니다. 아이고 의미 없다 !ㅋㅋ</p>
+    </header>
+    <main>
+    <section>
+        <p>다음 문자중에 왠지 마음에 드는 것을 하나 고르세요</p>
+        <form action="">
+        <input type="radio" name="company" id="naver" value="naver" required>
+        <label for="naver">네</label><br>
+        <input type="radio" name="company" id="kakao" value="kakao">
+        <label for="kakao">카</label><br>
+        <input type="radio" name="company" id="line" value="line">
+        <label for="line">라</label><br>
+        <input type="radio" name="company" id="coupang" value="coupang">
+        <label for="coupang">쿠</label><br>
+        <input type="radio" name="company" id="jeju" value="jeju">
+        <label for="jeju">베</label><br>
+        <input type="radio" name="company" id="tmax" value="tmax">
+        <label for="tmax">티</label>
+    </form>
+    </section>
+    <section>
+        <p>친구와 문자를 합니다. 다음중 어떤 메신저를 이용하시겠습니까? 모두 골라주세요.</p>
+        <form action="">
+            <input type="checkbox" name="messenger" id="카카오" value="kakao">
+            <label for="카카오">카카오톡</label><br>
+            <input type="checkbox" name="messenger" id="라인" value="line">
+            <label for="라인">라인</label><br>
+            <input type="checkbox" name="messenger" id="인스타" value="insta">
+            <label for="인스타">인스타그램 디엠</label><br>
+            <input type="checkbox" name="messenger" id="네이트온" value="nateon">
+            <label for="네이트온">네이트온</label><br>
+            <input type="checkbox" name="messenger" id="버디버디" value="buddy">
+            <label for="버디버디">버디버디</label><br>
+        </form>
+    </section>
+    <section>
+        <p>면접에서 자신의 포부를 한 문장으로 얘기한다면?</p>
+        <form action=""><input type="text" placeholder="내 답변">
+        </form>
+    </section>
+    <section>
+        <p>당신은 지금 한 기업의 최종면접을 앞두고 있습니다. 면접장에 들어가기 직전, 자기 자신에게 해주고 싶은 말은?</p>
+        <form action=""><input type="text" placeholder="내 답변">
+        </form>
+    </section>
+    <section>
+        <p>다음 중 기술 면접때 듣고 싶은 질문이 아닌것은?</p>
+        <form action="">
+            <select name="interview" id="interview">
+                <option value="">선택</option>
+                <option value="imyourfather">느그 아부지 모하시노?</option>
+                <option value="angstar">앙스타에서 누구 좋아하노?</option>
+                <option value="ackerman">리바이 아카만 좋아하나?</option>
+            </select>
+        </form>
+    </section>
+    <section>
+        <p>취업을 희망하는 날짜를 선택해주세요.</p>
+        <form action=""><input type="date">
+        </form>
+    </section>
+    <section>
+        <p>업무를 시작하기에 가장 적당한 시간을 고르세요.</p>
+        <form action=""><input type="time">
+        </form>
+    </section>
+    <button id="submit" type="submit" title="제출">제출</button>
+    <button id="delete" type="delete" title="양식 지우기">양식 지우기</button>
+    </main>
+</body>
+</html>
