@@ -13,9 +13,9 @@
     <p>가고 싶은 회사에 대한 호감도를 조사합니다. 아이고 의미 없다 !ㅋㅋ</p>
     </header>
     <main>
-    <section>
+    <fieldset>
         <p>다음 문자중에 왠지 마음에 드는 것을 하나 고르세요</p>
-        <form action="">
+        <form action="" method="get">
         <input type="radio" name="company" id="naver" value="naver" required>
         <label for="naver">네</label><br>
         <input type="radio" name="company" id="kakao" value="kakao">
@@ -29,10 +29,10 @@
         <input type="radio" name="company" id="tmax" value="tmax">
         <label for="tmax">티</label>
     </form>
-    </section>
-    <section>
+    </fieldset>
+    <fieldset>
         <p>친구와 문자를 합니다. 다음중 어떤 메신저를 이용하시겠습니까? 모두 골라주세요.</p>
-        <form action="">
+        <form action="" method="get">
             <input type="checkbox" name="messenger" id="카카오" value="kakao">
             <label for="카카오">카카오톡</label><br>
             <input type="checkbox" name="messenger" id="라인" value="line">
@@ -44,20 +44,20 @@
             <input type="checkbox" name="messenger" id="버디버디" value="buddy">
             <label for="버디버디">버디버디</label><br>
         </form>
-    </section>
-    <section>
+    </fieldset>
+    <fieldset>
         <p>면접에서 자신의 포부를 한 문장으로 얘기한다면?</p>
-        <form action=""><input type="text" placeholder="내 답변">
+        <form action="" method="get"><input type="text" placeholder="내 답변">
         </form>
-    </section>
-    <section>
+    </fieldset>
+    <fieldset>
         <p>당신은 지금 한 기업의 최종면접을 앞두고 있습니다. 면접장에 들어가기 직전, 자기 자신에게 해주고 싶은 말은?</p>
-        <form action=""><input type="text" placeholder="내 답변">
+        <form action="" method="get"><textarea name="comment" id="comment" cols="50" rows="1" placeholder="내 답변"></textarea>
         </form>
-    </section>
-    <section>
+    </fieldset>
+    <fieldset>
         <p>다음 중 기술 면접때 듣고 싶은 질문이 아닌것은?</p>
-        <form action="">
+        <form action="" method="get">
             <select name="interview" id="interview">
                 <option value="">선택</option>
                 <option value="imyourfather">느그 아부지 모하시노?</option>
@@ -65,19 +65,21 @@
                 <option value="ackerman">리바이 아카만 좋아하나?</option>
             </select>
         </form>
-    </section>
-    <section>
+    </fieldset>
+    <fieldset>
         <p>취업을 희망하는 날짜를 선택해주세요.</p>
-        <form action=""><input type="date">
+        <form action="" method="get"><input type="date">
         </form>
-    </section>
-    <section>
+    </fieldset>
+    <fieldset>
         <p>업무를 시작하기에 가장 적당한 시간을 고르세요.</p>
-        <form action=""><input type="time">
+        <form action="" method="get"><input type="time" min="09:00" max="18:00" required>
         </form>
+    </fieldset>
+    <section class="buttons">
+    <button class="submit" id="submit" type="submit" title="제출">제출</button>
+    <button class="reset" id="reset" type="reset" title="양식 지우기">양식 지우기</button>
     </section>
-    <button id="submit" type="submit" title="제출">제출</button>
-    <button id="delete" type="delete" title="양식 지우기">양식 지우기</button>
     </main>
 </body>
 </html>
