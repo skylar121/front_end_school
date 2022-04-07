@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+    
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-attachment: fixed;
+    background-image: url(https://images.unsplash.com/photo-1505064750047-f810f700e6d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+    background-position: center;
+    background-size: cover;
+}
+
+h1.year {
+    text-align: center;
+    margin-bottom: 0;
+    margin: 1em auto 0;
+}
+
+p.lion {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0 auto;
+}
+
+section.calendar {
+    width: 900px;
+    height: 900px;
+    position: relative;
+    top: 2em;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    font-size: 0.8em;
+}
+
+div.two_months {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+td {
+    vertical-align: top;
+    height: 2.5rem;
+}
+
+td:hover {
+    background-color: rgb(236, 236, 236);
+}
+
+table.month {
+    text-align: center;
+    margin-left: 5rem;
+    margin-bottom: 25px;
+    padding: 5px;
+    
+}
+
+caption.month-name {
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(182, 186, 202);
+    padding-bottom: 5px;
+}
+
+
+th {
+    width: 3rem;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+div.week {
+    padding-bottom: 5px;
+}
+
+th.saturday {
+    color: rgb(103, 103, 255);
+}
+
+th.sunday {
+    color: rgb(243, 105, 105);
+}
+
+.date{
+    color: black;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+#sat {
+    color: rgb(103, 103, 255);
+}
+
+#sun {
+    color: rgb(243, 105, 105);
+}
+
+.HTML {
+    background-color: lightblue;
+}
+
+.CSS {
+    background-color: lightsalmon;
+}
+
+.JS {
+    background-color: lightgoldenrodyellow;
+}
