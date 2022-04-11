@@ -1,0 +1,271 @@
+/* reset css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f1ffd1;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+/* animation */
+
+@keyframes 얼굴 {
+    from {
+        transform: rotate(-10deg);
+    }
+    to {
+        transform: rotate(5deg) translate(0px, 10px) scale(1.05);
+    }
+}
+@keyframes 귀왼쪽 {
+    from {
+        transform: rotate(20deg);
+    }
+    to {
+        transform: rotate(10deg) translate(20px) scale(.95);
+        transform-origin: right top;
+    }
+}
+@keyframes 귀오른쪽 {
+    from {
+        transform: rotate(-170deg)  ;
+    }
+    to {
+        transform: rotate(-180deg) translate(-10px);
+    }
+}
+
+/* title*/
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+h1.lovely {
+    font-family: 'GmarketSansMedium';
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 30vh;
+    height: 8vh;
+    background-color: hotpink;
+    color: white;
+    font-size: 2.5vh;
+    font-weight: 900;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+
+h2.hide {
+    font-family: 'GmarketSansMedium';
+    position: absolute;
+    left: 50%;
+    width: 30vh;
+    height: 8vh;
+    color: white;
+    font-size: 2.5vh;
+    font-weight: 900;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background-color: red;
+    transform: translate(-50%, -999%);
+}
+
+/* design */
+
+.maltese {
+    position: relative;
+    top: 150px;
+    margin: 50px auto;
+    width: 500px;
+    height: 400px;
+    border: 1px solid black;
+}
+
+.maltese .face {
+    position: absolute;
+    left: 50px;
+    width: 380px;
+    height: 340px;
+    border-radius: 40% 40% 50% 50%;
+    border: 10px solid #000;
+    background-color: white;
+    animation: 얼굴 1s infinite alternate;
+}
+
+
+.maltese .ear {
+    position: absolute;
+    background-color: white;
+    border: 10px solid black;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.maltese .ear.left {            
+    top: 10px;
+    left: -80px;
+    width: 180px;
+    height: 160px;
+    border-radius: 60% 20% 60% 35%;
+    transform: rotate(10deg);
+    animation: 귀왼쪽 1s infinite alternate;
+}
+
+.maltese .ear.right {
+    top: -25px;
+    right: -50px;
+    width: 180px;
+    height: 160px;
+    border-radius: 60% 20% 60% 35%;
+    transform: rotate(-180deg);
+    animation: 귀오른쪽 1s infinite alternate;
+}
+
+.maltese .earpink {
+    position: absolute;
+    background-color: #fad1d7;
+    border: 5px solid black;
+    
+}
+
+.maltese .earpink.left {
+    width: 100px;
+    height: 90px;
+    border-radius: 80% 20% 80% 35%;
+    top: 50px;
+    left: 60px;
+}
+
+.maltese .earpink.right {
+    width: 110px;
+    height: 80px;
+    border-radius: 70% 20% 80% 35%;
+    top: -10px;
+    right: 10px;
+    transform: rotate(10deg);
+}
+
+.maltese .eye {
+    position: absolute;
+    top: 120px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.eyebrow {
+    content: "";
+    position: absolute;
+    top: 90px;
+    width: 60px;
+    height: 10px;
+}
+
+.eyebrow.left {
+    border-radius: 50% / 50% 100% 0% 50%;
+    left: 80px;
+    transform: rotate(15deg);
+}
+
+
+.eyebrow.right {
+    border-radius: 50% / 100% 50% 50% 0%;
+    right: 85px;
+    transform: rotate(-20deg);
+}
+
+.eye.left {
+    left: 90px;
+}
+
+.eye.right {
+    right: 90px;
+}
+
+/* 
+.eyebright_big {
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.eyebright_big.left {    
+    top: 130px;
+    left: 100px;
+}
+
+.eyebright_big.right {
+    top: 129px;
+    right: 95px;
+}
+
+.eyebright_small {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.eyebright_small.left {
+    top: 150px;
+    left: 120px;
+}
+
+.eyebright_small.right {
+    top: 150px;
+    right: 115px;
+} */
+
+.nose {
+    position: absolute;
+    top: 180px;
+    left: 160px;
+    width: 50px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.mouth {
+    position: absolute;
+    bottom: 25px;
+    left: 80px;
+    width: 200px;
+    height: 50px;
+    border-radius: 80%;
+    background-color: transparent;
+}
+
+
+/* hover */
+
+section:hover > h2.hide {
+    transform: translate(-50%, 0%);
+    
+}
+
+section:hover > .maltese .face .eyebrow {
+    background-color: black;
+}
+
+section:hover > .maltese .face .mouth {
+    background-color: #d86f6f;
+}
+
+
+
