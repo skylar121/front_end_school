@@ -1,0 +1,77 @@
+/*Reset CSS*/
+body, ul {
+    margin: initial;
+}
+
+h1 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+body {
+    background-color: #ddd;
+}
+
+/*design*/
+
+.wrapper {
+    overflow: hidden;
+    background-color:#F4F4F4;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width:450px;
+    box-shadow: 10px;
+    transition: transform 300ms;
+}
+
+.wrapper:hover {
+    transform: translateY(-30px);
+}
+
+.header {
+    background-color: white;
+    padding: 20px 0;
+    border-bottom: 4px solid rgb(238, 238, 238);
+}
+
+h1 {
+    color: orangered;
+    border-left: 7px solid orangered;
+    padding-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.list {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+li {
+    background-color: white;
+    border: solid 4px rgb(238, 238, 238);
+    border-radius: 10px;
+    list-style-type: none;
+    padding: 12px;
+    color: rgb(112, 112, 112);
+    vertical-align: middle;
+    background-image: url(images/icon-close.png);
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 30px;
+}
+
+li:hover {
+    color: #138CFF;
+    border: solid 4px #138CFF;
+    background-image: url(images/icon-open.png) ;
+}
+
+
+
