@@ -1,0 +1,367 @@
+/* reset css */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url(./background.jpg);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* animation */
+
+@keyframes face {
+    from {
+        transform: rotate(-5deg);
+    }
+    to {
+        transform: rotate(5deg) translate(0px, 10px) scale(1.05);
+    }
+}
+@keyframes ear-left {
+    from {
+        transform: rotate(5deg);
+    }
+    to {
+        transform: rotate(15deg) translate(-10px) scale(.95);
+    }
+}
+@keyframes ear-right {
+    from {
+        transform: rotate(-150deg)  ;
+    }
+    to {
+        transform: rotate(-160deg) translate(-10px);
+    }
+}
+
+@keyframes hair {
+    from {
+        transform: rotate(-70deg);
+    }
+    to {
+        transform: rotate(-55deg) translate(0px, 10px) scale(1.05);
+    }
+}
+
+
+/* font */
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, p {
+    font-family: 'GmarketSansMedium'; malgun-gothic;
+}
+
+/* title*/
+
+h1.lovely {    
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%);
+    width: 100vh;
+    height: 7vh;
+    background-color: hotpink;
+    color: white;
+    font-size: 3vh;
+    font-weight: 900;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+
+h2.hide {
+    position: absolute;
+    left: 50%;    
+    top: 10%;
+    width: 100vh;
+    height: 7vh;
+    color: white;
+    font-size: 3vh;
+    font-weight: 900;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background-color: #e7175d;
+    transform: translate(-50%, -999%);
+}
+
+.mouse {
+    position: absolute;
+    left: 85vh;
+    top: 85vh;
+    font-size: 19px;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+/* design */
+
+.lovely_maltese {
+    cursor: pointer;
+}
+
+.maltese {
+    position: relative;
+    top: 20vh;
+    margin: 12vh auto;
+    width: 500px;
+    height: 400px;
+}
+
+.maltese .face {
+    position: absolute;
+    left: 50px;
+    width: 370px;
+    height: 330px;
+    border-radius: 50% 50% 70% 70%;
+    background-color: white;
+    animation: face 1s infinite alternate;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.maltese .hair {
+    position: absolute;
+    transform: rotate(-70deg);
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: hair 1s infinite alternate;
+}
+
+.maltese .hair.one {
+    left: 180px;
+    top: -30px;
+    width: 60px;
+    height: 20px;
+    border-radius:  0% 100% 0% 0%;
+}
+
+.maltese .hair.two {
+    left: 198px;
+    top: -7px;
+    width: 60px;
+    height: 10px;
+    border-radius: 80% / 50% 100% 0% 50%;
+}
+
+.maltese .hair.three {
+    left: 228px;
+    top: -15px;
+    width: 55px;
+    height: 15px;
+    border-radius: 20% 100% 0% 50%;
+}
+
+.maltese .ear {
+    position: absolute;
+    background-color: white;    
+    width: 190px;
+    height: 170px;
+    border-radius: 100% 0% 46% 54% / 57% 0% 100% 43%;
+    border: 0px solid black;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.maltese .ear.left {
+    top: 15px;
+    left: -95px; 
+    animation: ear-left 1s infinite alternate;
+}
+
+.maltese .ear.right {
+    top: -30px;
+    right:-60px;
+    animation: ear-right 1s infinite alternate;
+}
+
+.maltese .earpink {
+    position: absolute;
+    border-radius: 100% 0% 46% 54% / 57% 0% 100% 43%;
+    background-color: #fad1d7;    
+}
+
+.maltese .earpink.left {
+    width: 100px;
+    height: 90px;
+    top: 45px;
+    left: 65px;
+}
+
+.maltese .earpink.right {
+    width: 110px;
+    height: 80px;
+    top: 40px;
+    right: 30px;
+    transform: rotate(-10deg);
+}
+
+.maltese .eye {
+    position: absolute;
+    top: 120px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.eyebrow {
+    position: absolute;
+    top: 90px;
+    width: 60px;
+    height: 10px;
+}
+
+.eyebrow.left {
+    border-radius: 50% / 50% 100% 0% 50%;
+    left: 80px;
+    transform: rotate(15deg);
+}
+
+
+.eyebrow.right {
+    border-radius: 50% / 100% 50% 50% 0%;
+    right: 85px;
+    transform: rotate(-20deg);
+}
+
+.eye.left {
+    left: 90px;
+}
+
+.eye.right {
+    right: 90px;
+}
+
+
+.eyebright_big {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.eyebright_big.left {    
+    top: 130px;
+    left: 100px;
+}
+
+.eyebright_big.right {
+    top: 129px;
+    right: 95px;
+}
+
+.eyebright_small {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.eyebright_small.left {
+    top: 150px;
+    left: 120px;
+}
+
+.eyebright_small.right {
+    top: 150px;
+    right: 115px;
+} 
+
+.nose {
+    position: absolute;
+    top: 180px;
+    left: 160px;
+    width: 52px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.mouth {
+    position: absolute;
+    bottom: 30px;
+    left: 95px;
+    width: 180px;
+    height: 50px;
+    border-radius: 80%;
+}
+
+.teeth {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    }
+
+.teeth.one {
+    left: 40px;
+    top: 2px;
+    transform: rotate(170deg);
+}
+
+.teeth.two {
+    right: 40px;
+    top: 2px;
+    transform: rotate(190deg);
+}
+
+.teeth.three {
+    top: 40px;
+    left: 60px;
+    transform: rotate(5deg);
+}
+
+.teeth.four {    
+    top: 40px;
+    right: 60px;
+    transform: rotate(-5deg);
+}
+
+
+/* hover */
+
+section:hover > .maltese .face .eyebrow {
+    background-color: black;
+}
+
+section:hover > .maltese .face .eyebright_big {
+    background-color: black;
+}
+
+section:hover > .maltese .face .mouth {
+    background-color: #d86f6f;       
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+section:hover > h2.hide {
+    transform: translate(-50%, 0%);
+    
+}
+
+section:hover > .mouse::after {
+    content: '조금 사납지만 물진 않아요 🐾';
+    color: #635994;
+}

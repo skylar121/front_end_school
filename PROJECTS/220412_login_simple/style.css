@@ -1,0 +1,83 @@
+/* reset css */
+
+body, section, h1, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-weight: normal;
+    color: black;
+    box-sizing: border-box;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+/* import */
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+    /* design */
+
+    .wrapper {
+        width: 350px;
+        border: 1px solid #DBDBDB;
+        border-radius: 5px;
+        margin: 30px auto;
+        padding: 16px;
+    }
+
+    h1.title {
+        font-size: 12px;
+        margin-top: 4px;
+    }
+
+    a.login-btn {
+        display: inline-block;
+        width: 318px;        
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #711BFF;
+        border-radius: 5px;
+        margin-top: 15px; 
+        font-size: 12px;
+        color: white;
+    }
+
+    img.login-logo {
+        width: 64px;
+        margin-left: 108px ;
+    }
+
+    .login-txt {
+        vertical-align: 3px;
+    }
+
+    .login {
+        display: inline-block;
+        width: 133px;
+        font-size: 12px;
+        margin-top: 17px;
+    }
+
+    img.icon-lock {
+        width: 16px;
+        vertical-align: -3px;
+    }
+
+    .find-btn {
+        color: #767676;
+    }
+
+    .sign-up {
+        float: right;
+        width: 65px;
+        font-size: 12px;
+        margin-top: 17px;
+        
+    }
+
+    img.user {
+        width: 16px;
+        vertical-align: -3px;
+    }
+
+    .signup-btn {
+        color: #767676;
+    }

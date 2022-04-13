@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* utility */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        .clear-fix::after {
+            content: ' ';
+            display: block;
+            clear: both;
+        }
+
+        .cont-login {
+            margin: 20px auto;
+            width: 350px;
+            padding: 18px 15px 17px;
+            border: 1px solid #DBDBDB;
+            border-radius: 5px;            
+            box-sizing: border-box;
+        }
+
+        .cont-login a {
+            text-decoration: none;
+            color: ;
+        }
+
+        .cont-login .txt-login {
+            margin-bottom: 16px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            color: #000000;
+        }
+
+        .cont-login .link-login {
+            display: block;
+            padding: 10px 0 12px;
+            margin-bottom: 16px;
+            background: #711BFF;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;            
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .link-login .img-logo {
+            margin-right: 4px;
+            vertical-align: bottom;
+        }
+
+        .cont-login .cont-find {
+            float: left;
+        }
+
+        .cont-find .img-find {
+            float: left;
+            margin: -1px 4px 0 0;
+        }
+        
+        .cont-find .link-id::after {
+            float: right;
+            margin: 0.8px 4px;
+            display: block;
+            content: '';
+            width: 1px;
+            height: 12px;
+            background-color: #767676;
+        }
+
+        .cont-find [class^="link"] {
+            float: left;
+        }
+
+        .cont-login .cont-join {
+            float: right;
+            
+        }
+
+        .cont-join [class$="join"] {
+            float: left;
+        }
+
+        .cont-join .img-join {
+            margin: -1px 4px 0 0;
+        }
+
+    </style>
+</head>
+<body>
+    <article class="cont-login clear-fix">
+        <h2 class="blind">위니브 로그인</h2>  
+        <!-- 아티클로 만들었기 때문에 다른 페이지에 가서도 똑 떼놓고 동작이 되려면 h2로 -->
+        <p class="txt-login">더 편리해진 위니브에 오신 것을 환영합니다.</p>
+        <a href="#none" class="link-login">
+            <img class="img-logo" src="images/weniv-logo.png" alt="weniv">
+            로그인
+        </a>
+        <div class="cont-find">
+            <img class="img-find" src="images/icon-lock.png" alt="">
+            <a class="link-id" href="#none">아이디</a>
+            <a class="link-pw" href="#none">비밀번호 찾기</a>
+        </div>
+        <div class="cont-join">
+            <img class="img-join" src="images/icon-user.png" alt="">
+            <a class="link-join"href="#none">회원가입</a>
+        </div>
+    </article>
+</body>
+</html>
