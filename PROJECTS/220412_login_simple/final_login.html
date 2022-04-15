@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위니브 로그인</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .clear-fix::after {
+            content: ' ';
+            display: block;
+            clear: both;
+        }
+
+        a {
+            text-decoration: none;
+            color: #767676;
+        }
+
+        .hidden {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        .login{
+            margin: 20px auto;
+            width: 350px;
+            border: 1px solid #DBDBDB;
+            box-sizing: border-box;
+            border-radius: 5px;
+            padding: 18px 15px 17px 15px;
+        }
+
+        p.txt-login {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            margin-bottom: 16px;
+        }
+
+        .login .btn-login {            
+            display: inline-block;
+            width: 318px;            
+            padding: 10px 0px 12px;
+            background: #711BFF;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 12px;
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 17px;
+        }
+
+        .login .img-login {
+            width: 64px;            
+            vertical-align: -3px;
+            margin-right: 4px;
+        }
+
+        .btn-find .btn-ID::before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-image: url(images/icon-lock.png);
+            margin-right: 4px;
+            vertical-align: -3px;
+        }
+
+        div[class^="btn-find"] {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;            
+            float: left;
+            text-align: center;
+        }
+
+        .btn-find .btn-PW::before {
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 12px;            
+            margin: 0.8px 4px;
+            font-size: 12px;
+            line-height: 15px;
+            background-color: #767676;
+            vertical-align: -3px;
+        }
+
+            .btn-join::before {
+            content: '';
+            display: inline-block;
+            background-image: url(images/icon-user.png);
+            width: 16px;
+            height: 16px;
+            vertical-align: -3px;
+            margin-right: 4px;
+
+        }
+        
+ 
+        .btn-join {
+            display: inline-block;
+            float: right;
+            font-size: 12px;
+            line-height: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <article class="login clear-fix">
+        <h2 class="hidden">위니브 로그인</h2>
+        <p class="txt-login">더 편리해진 위니브에 오신 것을 환영합니다.</p>
+        <a class="btn-login" href="#none">
+            <img class="img-login" src="images/weniv-logo.png" alt="위니브 로고">
+            로그인
+        </a>
+        <div class="btn-find">
+            <a class="btn-ID" href="#none">아이디</a>
+            <a class="btn-PW" href="#none">비밀번호찾기</a>
+        </div>
+        <div class="btn-join">
+            <a href="#none">회원가입</a>
+        </div>
+    </article>
+</body>
+</html>

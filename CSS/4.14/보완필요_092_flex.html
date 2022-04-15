@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="/4.13/reset.css">
+    <style>
+        .container {
+            display: flex;
+            height: 100vh;
+            /* flex-wrap: wrap; */
+            /* flex-wrap: nowrap; */
+        }
+        li {
+            flex-shrink: 1; 줄어든다
+            flex-shrink: 0; 줄어들지 않는다
+            width: 100px;
+            box-sizing: border-box;
+            height: 50px;
+            background-color: pink;
+            border: 1px solid black;
+        }
+
+        li:nth-child(1) {
+
+        }
+
+        li:nth-child(2) {
+            
+        }
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <li>1 aaa</li>
+        <li>2 bb</li>
+        <li>3 cccccccccccccccccc cc</li>
+        <li>4 dd</li>
+        <li>5 e</li>
+        <li>6 f</li>
+        <li>1 aaa</li>
+        <li>2 bb</li>
+        <li>3 cccccccccccccccccc</li>
+        <li>4 dd</li>
+        <li>5 e</li>
+        <li>6 f</li>
+    </ul>
+</body>
+</html>

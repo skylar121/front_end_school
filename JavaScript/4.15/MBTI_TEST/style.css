@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, h1, h2, p {
+    font-family: 'GmarketSansMedium'; '맑은고딕'; san-serif;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .question {
+    display: none;
+} */
