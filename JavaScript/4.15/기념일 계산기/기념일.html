@@ -105,7 +105,7 @@
 
         //천일은 언제인가?
         var thousand = new Date(start.getTime() + 999 * (1000 * 60 * 60 * 24));
-        var thousandDate = thousand.getFullYear() + '.' + (thousand.getMonth()+1) + '.' + thousand.getDate();
+        var thousandDate = thousand.getFullYear() + '.' + (thousand.getMonth()+1) + '.' + thousand.getDate().toString().padStart(2,'0');
         $('#thousand-date').text(thousandDate);
 
         //기념일까지 남은 날짜는?

@@ -48,41 +48,41 @@
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
     <script>
-//        var hp = 300;
-//         $("#drone").click(function () {
-//         $("#spit").fadeIn(200);
-//         $("#spit").animate({left: "+=250"});
-//         $("#spit").fadeOut(function () {
-//         if (hp > 0) {
-//         hp = hp - 100;
-//         $("#hp").text("HP: " + hp);
-//         if (hp == 0) {
-//           $("#bunker").fadeOut();
-//         }
-//       }
-//     });
-//     $("#spit").css({left: "150px"});
-//   });
-
-  var hp = 300;
-      $("#drone").click(function () {
+      var hp = 300;
+        $("#drone").click(function () {
+        $("#spit").fadeIn(200);
+        $("#spit").animate({left: "+=250"});
+        $("#spit").fadeOut(function () {
+        if (hp > 0) {
+        hp = hp - 100;
+        $("#hp").text("HP: " + hp);
         if (hp == 0) {
-          $("#bunker").fadeIn();
-          hp = 300;
-          $("#hp").text("HP: " + hp);
-        } else {
-          $("#spit").fadeIn();
-          $("#spit").animate({ left: "+=250" });
-          $("#spit").fadeOut(function () {
-            hp = hp - 100;
-            $("#hp").text("HP: " + hp);
-            if (hp == 0) {
-              $("#bunker").fadeOut();
-            }
-          });
-          $("#spit").css({ left: "150px" });
+          $("#bunker").fadeOut();
         }
-      });
+      }
+    });
+    $("#spit").css({left: "150px"});
+  });
+
+  // var hp = 300;
+  //     $("#drone").click(function () {
+  //       if (hp == 0) {
+  //         $("#bunker").fadeIn();
+  //         hp = 300;
+  //         $("#hp").text("HP: " + hp);
+  //       } else {
+  //         $("#spit").fadeIn();
+  //         $("#spit").animate({ left: "+=250" });
+  //         $("#spit").fadeOut(function () {
+  //           hp = hp - 100;
+  //           $("#hp").text("HP: " + hp);
+  //           if (hp == 0) {
+  //             $("#bunker").fadeOut();
+  //           }
+  //         });
+  //         $("#spit").css({ left: "150px" });
+  //       }
+  //     });
     </script>
 </body>
 </html>
