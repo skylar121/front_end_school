@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropdown</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        *, *::after, *::before {
+            box-sizing: border-box;
+        }
+
+        a { 
+            text-decoration: none;
+            color: #000000;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper {
+            width: 200px;
+            margin-top: 10vh;
+        }
+
+        a.tit_favorite {
+            display: block;
+            padding: 12px 0 12px 14px;
+            border: 1px solid #C4C4C4;
+            box-sizing: border-box;
+            border-radius: 10px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            text-decoration: none;
+            color: #000000;
+        }
+
+        a.tit_favorite > button.toggle {
+            border: 0;
+            padding: 0;
+            background: url(/images/icon-Triangle-down.png) no-repeat center;
+            width: 12px;
+            height: 8px;            
+            margin-left: 45px;
+            cursor: pointer;
+        }
+
+        a.tit_favorite:hover {
+            border: 1px solid #9B51E0;
+            border-radius: 10px;
+            outline: 3px solid #F8E4FF;
+            border-radius: 10px;
+        }
+
+        ul.list {
+            width: 200px;
+            margin-top: 9px;
+            border: 1px solid #C4C4C4;
+            box-sizing: border-box;
+            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+
+        ul.list li {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            padding: 5px 8px;
+
+        }
+
+        ul.list li > a {
+            display: block;
+            padding: 7px 0 7px 10px;
+
+        }
+
+        ul.list li a:hover {
+            background: #F8E4FF;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <a class="tit_favorite" href="#none">최애 프로그래밍 언어<button name="toggle" class="toggle"></button></a>
+        <ul class="list">
+            <li><a href="#none">Python</a></li>
+            <li><a href="#none">Java</a></li>
+            <li><a href="#none">JavaScript</a></li>
+            <li><a href="#none">C#</a></li>
+            <li><a href="#none">C/C++</a></li>
+        </ul>
+    </div>
+</body>
+</html>
