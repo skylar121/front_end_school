@@ -13,16 +13,20 @@
 }
 
 /* design */
-body {
+body {    
+    background: #EAE8FE;
+}
+
+#app {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background: #EAE8FE;
+    justify-content: center;
+    flex-wrap: wrap;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-h1, h2, label[class^=hidden] {
+h1[class^=hidden], h2[class^=hidden], label[class^=hidden] {
     position: absolute;
     clip: rect(0 0 0 0);
     width: 1px;
@@ -55,10 +59,11 @@ ul.drinks {
 
 ul.drinks > li {
     width: 94px;
-    padding: 12px;
+    padding: 8px 8px 6px 10px;    
     text-align: center;
     border-radius: 10px;    
     border: 3px solid #ddd;
+    background-color: transparent;
     outline: 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -70,19 +75,27 @@ ul.drinks > li > img {
     width: 35px;
 }
 
-ul.drinks > li.violet::after {
-    background: rgba(0, 0, 0, 0.8);
+ul.drinks > li:nth-child(5)::after {
+    content: "";
+    display: block;
+    width: 58px;
+    height: 44px;
+    left: 0;
+    background: url(/mediaquery/soldout.png) no-repeat center;
+    background-size: contain;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 ul.drinks .drink_name {
     font-weight: 500;
-    font-size: 9px;
+    font-size: 9px;    
     margin: 5px 0 7px;
 }
 
 ul.drinks .drink_price {
-    width: 70px;
-    padding: 5px 15px;
+    display: block;
+    width: 100%;
+    padding: 5px;
     font-size: 12px;
     background: #6327FE;
     color: white;
@@ -134,11 +147,11 @@ ul.drinks .drink_price {
     cursor: pointer;
 }
 
-.buttons .scroll {
+.scroll {
     display: inline-block;
     width: 200px;
     height: 106px;
-    padding: 12px;
+    padding: 12px 10px 12px 12px;
     border: 1px solid #BDBDBD;
     box-sizing: border-box;
     border-radius: 5px;
@@ -146,11 +159,11 @@ ul.drinks .drink_price {
     overflow-y: scroll;
 }
 
-.buttons .scroll::-webkit-scrollbar {
+.scroll::-webkit-scrollbar {
     width: 12px;
 }
 
-.buttons .scroll::-webkit-scrollbar-thumb {    
+.scroll::-webkit-scrollbar-thumb {    
     height: 79px;
     border-radius: 50px;
     background-color: #FFFFFF;
@@ -158,29 +171,30 @@ ul.drinks .drink_price {
     border: 4px solid transparent;
 }
 
-.buttons .scroll::-webkit-scrollbar-track {
+.scroll::-webkit-scrollbar-track {
     background-color: transparent;
     border-radius: 50px;
 }
 
-.selected_drinks > li {
-    width: 170px;
+.selected_drinks > li,
+.drink_list >li {    
+    width: 100%;
     padding: 8px;
     background-color: #FFFFFF;
     margin-bottom: 6px;
     font-weight: 500;
     font-size: 9px;
     border-radius: 5px;
+    text-align: left;
 }
 
-.selected_drinks img.selected_cola {
+img.selected_cola {
     width: 18px;
-    height: 33px;
     margin-right: 10px;
     vertical-align: middle;
 }
 
-.selected_drinks span.selected_order {
+.selected_qty {
     float: right;
     width: 30px;
     text-align: center;    
@@ -209,32 +223,64 @@ ul.drinks .drink_price {
 
 .my_info {
     width: 360px;
-    height: 545px;
     float: right;
-    background-color: #FFFFFF;
 }
 
 .my_money {
     width: 100%;
-    height: 50px;
     padding: 9px 27px;
-    background-color: white;
-    margin-bottom: 10px;
-
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
 }
 
-.my_money_1 {
-    background-color: white;
-
+.my_money .tit_my_money {
+    width: 306px;
+    padding: 6px 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    background: #EAE8FE;
+    border-radius: 5px;
 }
 
-.my_drink {
+.my_money .price_my_money {
+    float: right;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    margin: -27px 10px 0 0;
+}
+
+
+.my_info .my_drink {
     width: 100%;
-    height: 364px;
-    padding: 25px 27px;
-    background-color: white;
+    padding: 25px 27px 48px;
+    background-color: #FFFFFF;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
 }
 
-.drink_list {
+.my_drink .drink_list {
     background-color: #EAE8FE;
+}
+.my_drink .scroll.drink_list {    
+    width: 306px;    
+    height: 364px;
+    margin-top: 13px;
+}
+
+.my_drink .scroll.drink_list > li {
+    width: 100%;
+}
+
+.my_drink .total_amount {
+    float: right;
+    margin: 6px -12px 0 0;
+    width: 109px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
 }
