@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button_정리</title>
+    <style>
+        div {
+            position: relative;
+            color: white;
+            text-align: center;
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 50px;
+            width: 200px;
+            height: 50px;
+            background-color: chocolate;
+            border: 2px solid black;
+            border-radius: 15px;
+            transition: all 2s;
+            overflow: hidden;
+        }
+
+        /* translate, translateX, translateY, rotate, skew, scale */
+        .c1:hover {
+            transform: translateX(100px);
+            transition-timing-function: ease;
+        }
+
+        /* ease-in, ease-out, ease-in-out은 잘 사용하지 않습니다. */
+        .c2:hover {
+            transform: translateX(100px);
+            transition-timing-function: linear;
+        }
+
+        .c3:hover {
+            background-color: brown;
+        }
+
+        .c4:hover {
+            background-color: goldenrod;
+            color: red;
+        }
+
+        .c5:hover {
+            transform: scale(1.2);
+            background-color: goldenrod;
+            color: red;
+        }
+
+        .c6:hover {
+            width: 1000px;
+            height: 100px;
+        }
+
+        .c7:hover {
+            width: 250px;
+            letter-spacing: 20px;
+        }
+
+        .c8:hover {
+            width: 250px;
+            letter-spacing: 20px;
+        }
+
+        .c9:hover {
+            /* line-height: 50px; */
+            opacity: 0.3;
+        }
+
+        .c10:hover {
+            border-color: hotpink;
+            border-width: 20px;
+        }
+
+        .c11:hover {
+            transform: rotate(20deg);
+        }
+
+        .c12:hover {
+            transform: rotate(20deg);
+            transform-origin: top;
+        }
+
+        .c13:hover {
+            transform: rotate(20deg);
+            transform-origin: right;
+        }
+
+        .c14:hover {
+            transform: rotate(20deg);
+            transform-origin: left;
+        }
+
+        .c15:hover {
+            transform: rotate(20deg);
+            transform-origin: bottom;
+        }
