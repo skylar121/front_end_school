@@ -1,0 +1,10 @@
+.item {
+    background-color: orange;
+    width: 50%;
+    height: auto;
+    
+}
+
+.item:nth-child(even) {
+    margin-left: auto;
+}

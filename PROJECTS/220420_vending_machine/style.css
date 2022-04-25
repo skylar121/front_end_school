@@ -1,32 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 /* reset css */
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
-@media(max-width:360px){
-    body  {
-        display: grid;
-    }
-    
-}
-
 /* design */
-body {    
+body {
     background: #EAE8FE;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 #app {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    font-family: 'Noto Sans KR', sans-serif;
 }
 
-h1[class^=hidden], h2[class^=hidden], label[class^=hidden] {
+h1[class^=hidden],
+h2[class^=hidden],
+label[class^=hidden] {
     position: absolute;
     clip: rect(0 0 0 0);
     width: 1px;
@@ -35,68 +30,101 @@ h1[class^=hidden], h2[class^=hidden], label[class^=hidden] {
     overflow: hidden;
 }
 
-.header .logo {
-    width: 386px;
+.logo {
+    position: absolute;
+    width: 100%;
+    max-width: 386px;
+}
+
+.img_logo {
+    max-width: 100%;
 }
 
 .wrapper {
-    width: 748px;
-    margin-top: 67px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 20px;
+    padding-top: 248px;
 }
 
 .wrapper .vending_machine {
-    display: inline-block;
+    display: block;
     width: 360px;
     background-color: #FFFFFF;
     padding: 31px 27px 28px;
 }
 
-ul.drinks {
+.vending_machine .drinks {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
 }
 
-ul.drinks > li {
-    width: 94px;
-    padding: 8px 8px 6px 10px;    
+.drinks li {    
+    width: 94px;    
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgb(0 0 0 / 50%);
+}
+
+.drinks .btn_item {
+    padding: 11px 11px 9px;
     text-align: center;
-    border-radius: 10px;    
-    border: 3px solid #ddd;
+    border: none;
     background-color: transparent;
-    outline: 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
-ul.drinks > li:hover {
-    border: 3px solid #6327FE;
+.drinks .btn_item:active {
+    border-radius: 10px;
+    outline: 3px solid #6327FE;
 }
 
-ul.drinks > li > img {
-    width: 35px;
+/* button의 상위인 li에 before로 주면 나타나는 순서가  li before < li after < button */
+.drinks .sold_out::before {
+    content: "";    
+    position: absolute;
+    width: 94px;
+    height: 130px;
+    background: no-repeat center/ 60px 46px url('./mediaquery/Sold-out.png') rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    z-index: 10;
 }
 
-ul.drinks > li:nth-child(5)::after {
-    content: "";
+.drinks .sold_out::after {
+    content: '품절';
+    overflow: hidden;
+    position: absolute;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 1px;
+    color: transparent;
+}
+
+.drinks .sold_out {
+    pointer-events: none;
+}
+
+.btn_item .img_item {
+    width: 36px;
+    margin: 0 auto;
+}
+
+.drinks .drink_name {
     display: block;
-    width: 58px;
-    height: 44px;
-    left: 0;
-    background: url(/mediaquery/soldout.png) no-repeat center;
-    background-size: contain;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-ul.drinks .drink_name {
     font-weight: 500;
-    font-size: 9px;    
-    margin: 5px 0 7px;
+    font-size: 9px;
+    line-height: 13px;
+    margin-bottom: 7px;
 }
 
-ul.drinks .drink_price {
-    display: block;
-    width: 100%;
-    padding: 5px;
+.drinks .drink_price {
+    display: inline-block;
+    width: 70px;
+    padding: 5px 12px;
+    font-weight: 500;
     font-size: 12px;
+    line-height: 100%;
     background: #6327FE;
     color: white;
     border-radius: 50px;
@@ -104,12 +132,6 @@ ul.drinks .drink_price {
 
 .vending_machine .buttons {
     margin-top: 20px;
-}
-
-.buttons::after{
-    content:'';
-	display:block;
-	clear:both;
 }
 
 .buttons .btn1 {
@@ -133,12 +155,12 @@ ul.drinks .drink_price {
     float: right;
 }
 
-.buttons .btn2 {    
+.buttons .btn2 {
     float: right;
     width: 94px;
     padding: 7px 9px;
     background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 4px rgb(0 0 0 / 50%);
     border: 0;
     border-radius: 5px;
     font-weight: 500;
@@ -163,7 +185,7 @@ ul.drinks .drink_price {
     width: 12px;
 }
 
-.scroll::-webkit-scrollbar-thumb {    
+.scroll::-webkit-scrollbar-thumb {
     height: 79px;
     border-radius: 50px;
     background-color: #FFFFFF;
@@ -176,8 +198,8 @@ ul.drinks .drink_price {
     border-radius: 50px;
 }
 
-.selected_drinks > li,
-.drink_list >li {    
+.selected_drinks>li,
+.drink_list>li {
     width: 100%;
     padding: 8px;
     background-color: #FFFFFF;
@@ -188,7 +210,7 @@ ul.drinks .drink_price {
     text-align: left;
 }
 
-img.selected_cola {
+.selected_cola {
     width: 18px;
     margin-right: 10px;
     vertical-align: middle;
@@ -197,8 +219,8 @@ img.selected_cola {
 .selected_qty {
     float: right;
     width: 30px;
-    text-align: center;    
-    padding: 5px 11px;   
+    text-align: center;
+    padding: 5px 11px;
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
@@ -223,7 +245,6 @@ img.selected_cola {
 
 .my_info {
     width: 360px;
-    float: right;
 }
 
 .my_money {
@@ -266,13 +287,14 @@ img.selected_cola {
 .my_drink .drink_list {
     background-color: #EAE8FE;
 }
-.my_drink .scroll.drink_list {    
-    width: 306px;    
+
+.my_drink .scroll.drink_list {
+    width: 306px;
     height: 364px;
     margin-top: 13px;
 }
 
-.my_drink .scroll.drink_list > li {
+.my_drink .scroll.drink_list>li {
     width: 100%;
 }
 
