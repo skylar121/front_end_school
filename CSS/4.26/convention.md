@@ -1,0 +1,16 @@
+컨벤션
+ - 네이버 컨벤션
+    - https://nuli.navercorp.com/data/convention/NHN_Coding_Conventions_for_Markup_Languages.pdf
+    - class명과 폴더명, 이미지 명은 예약된 이름을 사용한다
+    - 태그에서 class와 style은 마지막에 선언한다
+    - z-index는 10단위
+ - google code convention
+    - https://google.github.io/styleguide/
+    - ``<!--To DO remove optional tags-->`` 처럼 TO DO를 사용할 수 있다. todo tree 같은 것을 사용해서 목록화 할 수 있다.
+ - toast 컨벤션
+    - https://ui.toast.com/fe-guide/ko_HTMLCSS
+    - https://ui.toast.com/fe-guide/ko_CODING-CONVENTION
+ - airbnb 컨벤션
+    - https://github.com/airbnb/javascript
+ - class101 컨벤션
+    - https://jobs.class101.net/dev/event/secret_codereview

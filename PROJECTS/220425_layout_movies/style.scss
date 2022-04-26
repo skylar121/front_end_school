@@ -1,0 +1,128 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+@mixin ir {
+  position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ir {
+  @include ir;
+}
+
+#app {
+  width: 1060px;
+  background: #F2F2F2;
+  margin: 86px auto;
+  border-radius: 10px;
+  padding: 41px 29px 31px;
+}
+
+header {
+  margin-bottom: 37px;
+  text-align: center;
+}
+
+header h2.tit_main {  
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 37px;
+}
+
+nav.nav_main {
+  display: inline-block;
+  width: 650px;
+  border-top: 2px solid #BDBDBD;
+  padding-top: 28px;
+}
+
+.nav_main ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav_main ul li {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.nav_main ul li:nth-child(1) {
+  font-weight: 900;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 23px;
+}
+
+.movie_list {
+  width: 1003px;
+  padding: 26px 27px 30px;
+  border: 2px solid #BDBDBD;
+  border-radius: 15px;
+  text-align: center;
+  background-color: white;
+}
+
+.movie_info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 20px;
+}
+
+.movie_info li {
+  width: 220px;
+  padding: 19px 20px 0;
+  background-color: white;
+  border: 1px solid #BDBDBD;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
+  border-radius: 10px;
+  text-align: left;
+}
+
+.movie_info li img {
+  width: 180px;
+  border: 1px solid #BDBDBD;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+}
+
+.movie_info li strong.movie_title {
+  display: inline-block;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 23px;
+  margin: 11px 0 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie_detail dt+dd {
+  display: inline-block;
+}
