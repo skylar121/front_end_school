@@ -62,6 +62,39 @@ const arr = [{
  */
 
 // 1번 문제
-newArr = arr.map(function(val) {
-  return { "id": val._id, "name": val.name, "age": val.age };
-});
+const answer1 = arr.map(i => [i._id, i.name, i.age]);
+console.log(answer1);
+
+// const answer1_1 = arr.map(val => {
+//   return [{"id": val._id, "name": val.name, "age": val.age}];
+// });
+// console.log(answer1_1);
+
+
+// 2번 문제
+const answer2 = arr.filter(i => i.age >= 27).map(i => i._id);
+console.log(answer2);
+
+
+// 3번 문제 -> find는 부합하는 값 1개를 반환, 즉 여기서는 객체이므로 map 메서드를 쓸수없다. 평가값 check !!!
+const answer3 = arr.find(i => i._id === '6271fd40e30856d15651c60c').name;
+console.log(answer3);
+
+
+// 4번 문제
+const answer4 = arr.map(i => i.age);
+let avgAge = 0;
+for (let i = 0; i < answer4.length; i++) {
+  avgAge += answer4[i] / answer4.length;
+};
+console.log(avgAge);
+
+// 4번 추가 풀이
+const egi = arr.map(i => i.age).reduce((acc,val) => acc+val)/arr.length;
+console.log(egi);
+
+
+// 5번
+const numFemale = arr.map(i => i.gender).filter(i => i==='female').length;
+let ratio = Math.round((numFemale / arr.length *100) * 10) / 10 + '%';
+console.log(ratio);
