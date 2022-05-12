@@ -70,13 +70,7 @@ function comma(num) {
 
 console.log(comma(1000000000));
 
-// 문제2 원시 래퍼 타입 활용
-// function comma(num) {
-//   let temp = (Array.from(num.toString()));
-//   for (let j = temp.length - 3; j > 0; j-=3) {
-//       temp.splice(j, 0, ',');
-//   };
-//   return temp.join('');
-// };
-
-// console.log(comma(1000000000));
+// 문제2 toLocaleString() 함수 활용
+function comma(number){
+  return number.toLocaleString('ko-Kr');
+};

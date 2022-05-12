@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      width: 600px;      
+      margin: 0 auto;
+    }
+
+    .box {      
+      height: 600px;
+      background-color: rgb(128, 0, 107);
+    }
+
+    .pink {
+      background-color: pink;
+    }
+
+    .yellow {
+      background-color: yellow;
+    }
+
+    .skyblue {
+      background-color: skyblue;
+    }
+
+    .buttons {
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    button {
+      margin-left: 50px;
+    }
+
+    button:nth-of-type(1) {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="box"></div>
+      <div class="buttons">
+        <button>핑크</button>
+        <button>노랑</button>
+        <button>하늘</button>
+    </div>
+  </div>
+  <script>
+    const box = document.querySelector(".box")
+    const btnPink = document.querySelectorAll("button")[0];
+    const btnYellow = document.querySelectorAll("button")[1];
+    const btnSky = document.querySelectorAll("button")[2];
+
+    btnPink.addEventListener('click',function(){
+      box.classList.add("pink");
+      box.classList.remove("yellow", "skyblue");
+      console.log(pink);
+    });
+
+    btnYellow.addEventListener('click',function(){
+      box.classList.add("yellow");
+      box.classList.remove("pink", "skyblue");
+      console.log(yellow);
+    });
+
+    btnSky.addEventListener('click',function(){
+      box.classList.add("skyblue");
+      box.classList.remove("yellow", "pink");
+      console.log(skyblue);
+    });
+  </script>
+</body>
+
+</html>

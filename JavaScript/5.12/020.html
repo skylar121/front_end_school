@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    button {
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <body>
+    점심 식단
+    <article id="container">
+      <ul>
+        <li>탕수육</li>
+        <li class="item-second">유산슬</li>
+        <li>짜장면</li>
+      </ul>
+    </article>
+    저녁 식단
+    <article>
+      <ul>
+        <li>된장국</li>
+        <li class="item-second">김치찌게</li>
+        <li>해장국</li>
+      </ul>
+    </article>
+    <button class="">HELLO!</button>
+    <button>Make me BLUE!</button>
+    <script>
+      // var arrLike = {
+      //   0: 'one',
+      //   1: 'two',
+      //   2: 'three'
+      // }
+      // const cont = document.getElementById('container');
+      // console.log(cont.getElementsByClassName('item-second')[0]); // document가 아닌 특정 부분을 지정해놓고 선택하면 좀 더 편리하다
+
+      // const myBtn = document.querySelector("button");
+      // myBtn.addEventListener('click', function () {
+      //   console.log("hello world");
+      // })
+
+      const myBtn = document.querySelector("button");
+
+      myBtn.addEventListener('click', function () {
+
+        // blue 라는 클래스의 속성 값을 지정 할 수 있습니다.
+        myBtn.classList.add("blue");
+
+        // myBtn.classList.remove(“blue”);    // 클래스를 제거합니다.
+        // myBtn.classList.toggle(“blue”);     // 클래스를 토글합니다. 없으면 넣어주고, 있으면 제거합니다.
+        // myBtn.classList.contains(“blue”);  // 해당하는 클래스가 있는지 확인합니다.
+      })
+
+
+    </script>
+  </body>
+
+</html>
