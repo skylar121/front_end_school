@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h1>나의 todo list</h1>
+    <p>1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.<button type="button">삭제</button></p>
+    <p>2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
+    <p>3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">삭제</button></p>
+    <!-- 위와 같은 HTML코드 구조가 있을 때
+    1. P 태그를 클릭하면 p 태그의 컨텐츠를 출력하는 alert 창을 띄워주고
+    2. 삭제 버튼을 클릭하면 삭제할 것인지를 물어보는 confirm 창을 띄워주고, 확인을 누르면 P태그를 삭제합니다. -->
+
+    <script>
+        const txts = document.querySelectorAll('p');
+        const btns = document.querySelectorAll('button');
+
+        // for 사용 (NodeList)
+        // for (let i = 0; i < text.length; i++) {
+        //     text[i].addEventListener('click', (event) => {
+        //         alert(event.target.textContent.slice(0, -2));
+        //     });
+        // }
+
+        // // forEach 사용 (NodeList, IE지원 X)
+        // para.forEach((element) => {
+        //     element.addEventListener('click', () => {
+        //         // alert(element.textContent.slice(0, -2)); (내가한것)
+        //         alert(event.target.firstChild.textContent); // 근본적 방법
+        //     })
+        // });
+
+        // forEach를 IE에서 쓰고싶을때
+        // 프로토타입 = 객체가 공유하는 메서드를 저장하는 공간
+        // call 함수를 쓰면 지금은 Array에서 불러지는건데, 마치 txts가 forEach를 가진것처럼 사용가능 (=Array로 부터 txts가 forEach문을 빌려온다)
+        // call 의 두번째 매개변수: call(p, 여기) 에는 뽀이치의 매개변수
+        Array.prototype.forEach.call(this, (item) => {
+            item.addEventListener('click', () => {
+                // alert(element.textContent.slice(0, -2));
+                alert(event.target.firstChild.textContent);
+            })
+        });
+
+
+        // 2번
+        for (const item of btns) {
+            item.addEventListener('click', (event) => {
+                let result = confirm('삭제할거여?'); // confirm 창에서 확인누르면 true, 취소누르면 false
+                event.stopPropagation();
+                if (result) {
+                    item.parentElement.remove();
+                }
+                // 버블링되면서 부모요소에 있는 버블링 이벤트를 실행 => p태그에 있던 1번문제의 이벤트가 버블됨
+                // item.parenElement로 타고가서 p태그를 찾는것
+            })
+        }
+
+        // 이벤트 위임 활용하기
+        document.body.addEventListener("click", function (e) {
+            console.log(e.target.nodeName);
+            if (e.target.nodeName === "BUTTON") {
+                if (confirm("삭제할꺼야?")) {
+                    e.target.parentNode.remove();
+                }
+            } else if (e.target.nodeName === "P") {
+                alert(
+                    e.target.textContent.replace(
+                        e.target.firstElementChild.textContent,
+                        ""
+                    )
+                );
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <form action="">
+        <button type="submit" class="submit">제출</button>
+    </form>
+    
+    <script>
+        // 캡처링 시작, 그러나 둘다 기본값인 버블링으로 실행됨
+        const submit = document.querySelector('.submit'); 
+        submit.addEventListener('click', (event) => {
+            console.log('clicked');
+            event.preventDefault();
+            event.stopPropagation(); // 이벤트 전파과정 차단
+        });
+        
+        document.body.addEventListener('click', () => {
+            console.log('event still alive!');
+        }, true); // true를 넣어 캡처링 먼저 진행 되도록 이벤트 순서 조작 (기본값은 false로 버블링 이벤트 감지)
+    </script>
+</body>
+</html>
