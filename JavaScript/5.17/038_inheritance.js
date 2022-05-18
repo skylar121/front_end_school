@@ -9,3 +9,4 @@ Parent.prototype.rename = function (name) {
 Parent.prototype.sayName = function () {
     console.log(this.name);
 }
+

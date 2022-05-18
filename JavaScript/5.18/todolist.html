@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+</head>
+<body>
+    <script>
+        class Todo {
+            constructor (item, isDone = false) { // isDone 함수내 초기화
+                this.item = item;
+                this.isDone = isDone;
+            }
+
+            changeState() {
+                this.isDone = this.isDone === false ? true : false;
+            }
+        }
+
+        class TodoManager {
+            constructor (todos) {
+                this.todos = [];
+            }
+
+            addItem (todos) {
+                const myTodo = new Todo(todos);
+                this.todos.push(myTodo);
+                
+            }
+            getItems () {
+                console.log(this.todos);
+            }
+
+            getLeftTodoCount () {
+                return this.todos.filter(todo => todo.isDone === false).length;
+            }
+        }
+
+        const todos = new TodoManager();
+
+    </script>
+</body>
+</html>

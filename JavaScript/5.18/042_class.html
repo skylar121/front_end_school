@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        function Robot(name) {
+            this.name = name;
+        }
+
+        Robot.prototype.sayYourName = function () {
+            console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        }
+        const bot1 = new Robot('재현')
+        console.log(bot1.sayYourName());
+
+
+        // class는 함수가 아니기 때문에 소괄호 X
+        class RobotClass {
+            constructor(name) {
+                this.name = name; // this = 인스턴스
+            }
+
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+        }
+
+        const botClass1 = new RobotClass('브랜든');
+        const botClass2 = new RobotClass('브랜든 아이크');
+
+    </script>
+</body>
+</html>

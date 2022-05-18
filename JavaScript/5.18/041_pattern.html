@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // 모듈 패턴
+        function Person () {
+            let age = 15; // 클로저 (폐쇄된 공간 생성, 외부에서 접근 불가)
+
+            return { // 인스턴스, 리턴값으로 객체 자체를 반환
+                getAge: function() { return age }, // 접근
+                setAge: function (data) { age = data } // 변경
+            } // person이 종료된 후에도 클로저 접근가능
+        }
+
+        const person = Person();
+        console.log(person.getAge());
+        console.log(person.age());
+        person.setAge(40); // 40
+        console.log(person.getAge()); // 15
+
+        // 사용자 정의 타입 패턴
+        function PersonType() {
+            this.age = 35;
+        }
+
+        PersonType.prototype.getAge = function () {
+            return this.age
+        }
+
+        const person2 = new PersonType();
+        console.log(person2.getAge());
+
+        // 모듈 + 사용자 정의 타입 혼합 패턴. 비공개 변수를 포함한 타입을 생성할 때
+        function PersonType2() {
+            let age = 25;
+
+            function innerPersonType() { }
+
+            innerPersonType.prototype.getAge = function() {
+                return age;
+            }
+
+            return innerPersonType;
+        }
+
+        const Person3 = PersonType2();
+
+        const person3 = new Person3();
+        console.log(person3.getAge());
+        
+
+        // 모듈 + 사용자 정의 패턴 + IIFE 한스푼으로 코드 단순화
+        const PersonType3 = (
+            function() {
+                let age = 15;
+
+                function innerPersonType() { }
+
+                innerPersonType.prototype.getAge = function() {
+                    return age;
+                }
+
+                return innerPersonType;
+            }
+        )();
+
+        const personWithSecret = new PersonType3();
+        console.log(personWithSecret.getAge());
+
+    </script>
+</body>
+</html>

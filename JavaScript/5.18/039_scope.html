@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <script>
+        // scope = 변수의 생존 범위
+        // 지역, 전역, 함수
+        // 스코프 체인: 안에 없으면 밖에 찾기, 상위 요소로 찾아 찾아 올라가기
+        // 함수 스코프 = 함수 내부의 공간, 외부에서 내부로 접근하는 것은 불가하다, 다만 스코프 체인 덕분에 함수 내부에서 정의되어 있다면 어디서나 접근 가능하다
+        // 함수를 어디서 호출했는지 상관 없이 생성된 곳에서 상관이 있따
+
+        // var func1 = function () {
+        //     var a = 1; // 여길 주석처리하면 리턴값은 22가 됨
+        //     var b =2;
+        //     console.log(a+b); // 3, 함수스코프 내에서 먼저 찾기 때문에
+        //     // return a + b;
+        // }
+        // // 함수는 실행되지 않으면 메모리 차지 X (선언해도 X)
+        // // 실행 시작시 메모리 차지, 끝나면 메모리에서 해제됨
+        // // 함수는 재사용성이 목적중 하나라고 들었었는데, 그럼 호출(실행)될때마다 메모리를 새로 차지
+
+
+        // var a = 20;
+
+        // var func = function () {
+        //     var a = 1;
+        //     var b = 2;
+
+        //     var func2 = function () {
+        //         var b = 5;
+        //         var c = 6;
+        //         a = a + b + c;
+        //         console.log(a);
+        //     }
+
+        //     func2();
+        // }
+
+        // func();
+
+        function test() {
+            var val1 = 'hello';
+            var val2 = 'world';
+        }
+
+
+        function test() {
+            val1 = 'hello'; //var 을 안써주고 함수 내부에서 선역하면 마치 전역처럼
+            var val2 = 'world'
+        }
+
+        console.log(val1);
+        console.log(val2);
+
+    </script>
+</body>
+
+</html>

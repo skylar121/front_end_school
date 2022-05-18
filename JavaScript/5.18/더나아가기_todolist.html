@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+</head>
+
+<body>
+    <h1>오늘의 할 일</h1>
+    <input type="text" name="" id="text">
+    <button type="button">추가하기</button>
+    <ul>
+
+    </ul>
+
+    <script>
+        class Todo {
+            constructor(item, finished) {
+                this.item = item;
+                this.finished = finished;
+            }
+
+            changeState() {
+                this.finished = !this.finished
+            }
+        }
+
+        class TodoManager {
+            constructor() {
+                this.todoList = [];
+            }
+
+            addItem(item, finished = false) {
+                // const todo = new Todo(item, finished);
+                this.todoList.push(new Todo(item, finished))
+            }
+
+            getItems() {
+                return this.todoList;
+            }
+
+            getLeftTodoCount() {
+                return this.todoList.reduce((total, current) => {
+                    if (current.finished === false) {
+                        return ++total;
+                    } else {
+                        return total;
+                    }
+                }, 0
+                );
+            }
+        }
+
+        const todoManager = new TodoManager();
+
+        const input = document.getElementById('text');
+        const showList = document.querySelector('ul');
+
+        // class ViewManager {
+
+        // }
+
+        // 불렛 리스트로 하단에 삭제 버튼과 함께 추가하기
+        document.querySelector('button').addEventListener('click', () => {
+            todoManager.addItem(input.value, false);
+            const bullet = document.createElement('li');
+            showList.appendChild(bullet);
+            bullet.textContent = input.value;
+            input.value = null;
+
+            // 삭제 버튼 추가
+            const delBtn = document.createElement('button');
+            delBtn.className = 'delBtn';
+            delBtn.setAttribute('type', 'button');
+            delBtn.textContent = '삭제'
+            bullet.appendChild(delBtn);            
+
+            // 삭제 버튼 클릭시 삭제
+            delBtn.addEventListener('click', (event) => {
+            console.log(event.target.nodeName);
+            let result = confirm('삭제할거여?');
+            if (result) {
+                event.target.parentElement.remove();
+            }
+        })
+        });
+
+    </script>
+</body>
+
+</html>

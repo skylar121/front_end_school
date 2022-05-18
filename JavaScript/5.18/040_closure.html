@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // 내부 함수가 외부 함수보다 오래 살아있는 경우
+        var outer = function () {
+            var a = 1; 
+            // private property 외부에서 접근불가능한 폐쇄된 영역 - 타 언어에는 있지만 자바스크립트에는 없음
+            // outer가 종료되었어도 여전히 접근 가능 , 종료되었어도 접근할 수 있는 권한을 가짐 (오로지 inner함수만!!)
+            // outer 함수가 메모리상에서 사라져도, a는 살아있음
+            // 가비지 콜렉터는 내부 함수랑 아직 연결되어 있다고 생각해서 메모리 해제하지 않음
+            // 클로저 = 폐쇄된 공간안에 접근 하기 위한 테크닉
+            // 새로 클로저라는 영역이 생기는게 아님
+            // * 타언어에는 있는 private 영역을, 자바스크립트에서는 클로저라는 테크닉(영역X)으로 대신한다 *
+
+            var inner = function () {
+                var b = 6;
+                var c = 7;
+                a = a + b + c;
+
+                console.log(a);
+            }
+
+            return inner(); // return 종료해서 사라짐
+        }
+
+        var newInner = outer();
+        newInner();
+
+    </script>
+</body>
+</html>
