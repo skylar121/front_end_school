@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            margin: 200px auto;
+            background-color: darkslateblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        const box = document.getElementById('box');
+        box.style.transition = 'all 1s ease';
+        let currPos = 0;
+        
+        document.addEventListener('keydown', move);
+        // 콜백함수는 함수실행시 괄호 안넣어줌!
+        
+        function move (e) {
+            const key = document.getElementById(e.key);
+            if (e.keyCode == 87) {
+                console.log('w');
+                currPos -= 50
+                box.style.transform = `translateY(${currPos}px)`; // "translateX("+pos+"px)"
+            } 
+            if(e.keyCode == 83) {
+                console.log('s');
+                currPos += 50
+                box.style.transform = `translateY(${currPos}px)`;
+            } 
+            if(e.keyCode == 68) {w
+                console.log('d');
+                currPos += 50
+                box.style.transform = `translateX(${currPos}px)`;
+            } 
+            if(e.keyCode == 65) {
+                console.log('a');
+                currPos -= 50
+                box.style.transform = `translateX(${currPos}px)`;
+            } 
+        }
+    </script>
+</body>
+</html>

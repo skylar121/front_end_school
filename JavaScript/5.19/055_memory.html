@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // case.1
+        var me = { age : 30 };
+        var you = me;
+        // { age : 30 } 참조하는 카운터: 2
+
+        me = null;
+        // { age : 30 } 참조하는 카운터: 1
+
+        you = null;
+        // { age : 30 } 참조하는 카운터: 0 => 가비지 컬렉션 대상이 됩니다.
+
+        // case.2
+        var x = {
+            y: {
+                z: 1
+            }
+        }
+
+        // x가 참조하는 객체는 obj1, y가 참조하는 객체는 obj2
+
+        var a = x; // obj1 참조카운트: 2 (x, a)
+        x = 1; // obj1 참조카운트: 1 (a)
+
+        var b= a.y; // obj2 참조카운트: 2 (b, y)
+        a = 2; // obj2 참조카운트: 1 (b), obj1 참조카운트: 0
+        // obj1을 참조하는 아이는 없지만 obj2가 obj1 안에 속해있어서 obj1이 불필요하게 남아있기 때문에 메모리 누수가 발생했다 => Mark and Sweep 알고리즘으로 해결!
+
+        // case.3 클로저 메모리 누수문제
+        function outer() {
+            let privateVal = ['test']; // 클로저 (외부에서 접근할수 없는 폐쇄된 공간)
+
+            function getPrivate() {
+                return privateVal;
+            }
+
+            return getPrivate; // outer 함수 밖으로 빼내기
+        }
+
+        const private = outer();
+        let secretVal = private(); // 실행되고나면 값만 secretVal로 리턴되고나서 메모리에서 사라짐, 연결도 끊어짐
+        console.log(secretVal); // secretVal이 privateVal 참조
+
+        // - 지금 outer 함수를 실행시켜서 private라는 변수에 return값을 받아왔는데 
+        // - 그 return이 getPrivate라서 getPrivate는 참조되고 outer는 카운트되지 않지만 클로저로 인해 남아있다
+        
+        secretVal = null;        
+        // 사용을 마친 secretVal 은 나중에 null 혹은 undefined와 같은 다른 값을 할당하여 클로져 공간과의 연결을 제거하여야 합니다. 
+        // 가비지 컬렉터에게는 null, undefined를 구분하지 않습니다. 연결이 끊어져 있다는것이 더 중요합니다.
+
+    </script>
+</body>
+</html>
