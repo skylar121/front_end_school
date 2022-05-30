@@ -338,18 +338,21 @@ JavaScript는 웹페이지의 동작,
         // enumerable: true, // 열거(for) 가능 여부, 기본값 false
         // configurable: true // 재정의 가능 여부, 기본값 false
         ```
-    * 메서드 : Object.keys, Object.values, Object..entries
+    * 객체 => 배열 변환 메서드 : Object.keys, Object.values, Object..entries
     ```js
     let human = {name:'hojun1', age: 10}
     Object.entries(human)
-    Object.keys(human)
-    Object.values(human)
+    Object.keys(human) // key들을 배열로
+    Object.values(human) // value들을 배열로
     //변수명.keys()와 같은 형식은 안됩니다.
     x.keys()
     ```
 
-- Map : object
-    * 메서드 : set, get, has, delete, size
+- 바벨을 통해 Map, Set 활용가능 (현재 ie 지원불가)
+- Map : object와 같은 자료형 (array의 메서드인 map과 다른거임!)
+    * 메서드 : set, get, has, delete, size (keys, values, entries)
+    * 리터럴 표현법 없음
+    * 객체 설계자체가 잘못되었는데 업데이트를 못해서 새로 생김 (객체안에 배열, 객체, 함수 등이 다 상속받기 때문)
     ```js
     let map = new Map()
     map.set('one', 100)
@@ -358,20 +361,23 @@ JavaScript는 웹페이지의 동작,
     map.set('four', [10, 20])
     map.set(5, [100, 200])
     map.set([1, 2], [100, 200])
-    map.get(5)
+    map.get(5) // [100, 200]
+    map.keys() // {'one', 'two', 'three', 'four', 5, [1, 2]}
 
     let human = {
         name:'hojun3',
-        age:30,
+        age: 30,
         local:'jeju'
     }
+    // let hojun = new Map(hojun) 불가능 (객체는 not iterable 중복 불가여서)
     let hojun = new Map(Object.entries(human))
     ```
 
 - Set : object
-    * 메서드 : add, delete, has, size
+    * 메서드 : add, delete, has, size (keys, values, entries)
+    * 리터럴 표현법 없음
     * 중복을 허락하지 않는다
-    * 합집합, 교집합, 차집합 등에 메서드가 있진 않지만, 이러한 합집합, 교집합, 차집합을 구현하기 위해 Set을 사용하는 경우가 많습니다.
+    * 합집합, 교집합, 차집합 등에 메서드가 있진 않지만, 이러한 합집합, 교집합, 차집합을 구현하기 위해 Set을 사용하는 경우가 많습니다. (실무보단 알고리즘 풀이에 유용)
     ```js
     let set = new Set()
     set.add(1);
@@ -382,7 +388,7 @@ JavaScript는 웹페이지의 동작,
     set.add(3);
     set.add(3);
     set.add(3);
-    set.size
+    set.size // 3, 중복 불가능!
     // let set = new Set([1, 2, 3, 3, 3, 3])
     // let set = new Set('helllllllllo')
     ```
