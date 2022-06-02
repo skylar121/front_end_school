@@ -71,9 +71,8 @@ h2.tit_aot::before {
   display: inline-block;
   position: absolute;
   top: -60px;
-  left: 25px;
-  width: 120px;  
-  height: 35px;
+  width: 100px;
+  padding: 2px 5px;
   background-color: rgb(255, 91, 32);
   box-shadow: 0 8px 0 rgb(187, 67, 24);
   border-radius: 3px;
@@ -123,7 +122,7 @@ h2.tit_aot {
 
 .movie_detail .detail_left {
   width: 70%;
-  padding: 1.5em 5em 1.5em 1.5em; 
+  padding: 1.5em 4em 1.5em 1.5em; 
   word-break: keep-all;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -159,30 +158,29 @@ h2.tit_aot {
 .detail_right > ul > li:nth-child(2) > h3::after {
   content: "";
   display: block;
-  width: 250px;
+  width: 200px;
   height: 50px;
   background-image: url(./images/star.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 0 -50px;
+  background-position: 0 -40px;
   margin-top: 10px;
 }
 
 .detail_right > ul > li:nth-child(3) > img.img_cast {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 7px solid rgb(17, 17, 17);
   margin-right: -25px;
 }
 
-@media (max-width:1200px) {
+@media (max-width:1300px) {
   .movie_detail .detail_left {
     width: 100%;
   }
 
   .movie_detail .detail_right {
     width: 50%;
-  }
-  
+  }  
 }

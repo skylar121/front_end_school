@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h1 class="one">hello</h1>
+    <script>
+        // $가 함수이름
+        function $(select) {
+            return document.querySelector(select)
+        }
+        console.log($('.one'))
+        $('.one').innerText('hello world')
+    </script>
+</body>
+
+</html>

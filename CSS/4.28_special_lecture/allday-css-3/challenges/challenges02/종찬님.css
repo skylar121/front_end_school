@@ -1,0 +1,34 @@
+body {
+  background-color: #111;
+  color: #999;
+}
+
+.rating {
+  background-image: url(./images/happy.png);
+  width: 240px; /*원본 480px의 절반*/
+  height: 48px; /*원본 196px의 절반*/
+  background-size: 240px 96px;
+  border: 10px solid blueviolet;
+  overflow: hidden;
+}
+
+.rating::before {
+  content: "";
+  display: block;
+  background-image: url(./images/happy.png);
+  background-position: left bottom; /*background image를 x축으로는 left, y축으로는 bottom으로 아래로 밀기, 48px이랑 똑같은것*/
+  width: 0; /*원본 480px의 절반*/
+  height: 48px; /*원본 196px의 절반*/
+  background-size: 240px 96px;
+}
+
+.rating_10::before { width: 20%; }
+.rating_20::before { width: 40%; }
+.rating_30::before { width: 60%; }
+.rating_40::before { width: 80%; }
+.rating_50::before { width: 100%; }
+
+.rating_45::before { width: 90%; }
+.rating_45::before { width: 90%; }
+.rating_45::before { width: 90%; }
+.rating_45::before { width: 90%; }

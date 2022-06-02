@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -9,11 +11,11 @@ a {
 
 @mixin ir {
   position: absolute;
-	clip: rect(0 0 0 0);
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
 }
 
 @mixin flex-center {
@@ -31,19 +33,20 @@ a {
   background: #F2F2F2;
   margin: 86px auto;
   border-radius: 10px;
+  border: 2px solid #BDBDBD;
   padding: 41px 29px 31px;
 }
 
 header {
   margin-bottom: 37px;
   text-align: center;
-}
 
-header h2.tit_main {  
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
-  margin-bottom: 37px;
+  h2.tit_main {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 37px;
+  }
 }
 
 nav.nav_main {
@@ -51,24 +54,25 @@ nav.nav_main {
   width: 650px;
   border-top: 2px solid #BDBDBD;
   padding-top: 28px;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+
+    li {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    li.focus {
+      font-weight: 900;
+    }
+  }
 }
 
-.nav_main ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-}
-
-.nav_main ul li {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-}
-
-.nav_main ul li:nth-child(1) {
-  font-weight: 900;
-}
 
 main {
   display: flex;
@@ -79,7 +83,7 @@ main {
   gap: 23px;
 }
 
-.movie_list {
+main .movie_list {
   width: 1003px;
   padding: 26px 27px 30px;
   border: 2px solid #BDBDBD;
@@ -88,7 +92,7 @@ main {
   background-color: white;
 }
 
-.movie_info {
+.movie_list .movie_info {
   display: flex;
   flex-wrap: wrap;
   gap: 24px 20px;
@@ -125,44 +129,160 @@ main {
   text-overflow: ellipsis;
 }
 
-.movie_detail dt, dd {
+.movie_detail {
+  position: relative;
+}
+
+.movie_detail dt,
+dd {
   display: inline-block;
 }
 
-.movie_detail > div:nth-child(2) {
-  float: right;
-  margin-top: -21px;
+.movie_detail>div:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-.movie_detail > div > dt {
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 19px;  
-  color: #828282;
-}
-
-.movie_detail > div > dd {
+.movie_detail>div>dt {
   font-weight: 400;
   font-size: 13px;
   line-height: 19px;
+  color: #828282;
 }
 
-.movie_detail > div:nth-child(2) > dd::before {
+.movie_detail>div>dd {
+  font-weight: 400;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.movie_detail>div:nth-child(2)>dd::before {
   content: "";
   display: inline-block;
   background: url(./images/Star_1.png) no-repeat center;
   width: 14px;
   height: 14px;
-  margin: 0 4px 0 1px;
+  margin: 0px 4px -1px 1px;
 }
 
-.movie_detail a {
-  display: block;
+// #app > main > section > ul > li > a.btn_book
+.movie_info li a {
+  display: inline-block;
+  width: 110px;
   background: #F2F2F2;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  width: 110px;
   text-align: center;
+  margin: 13px 0 0 -20px;
+  border-top: 1px solid #BDBDBD;
+  position: relative;
+  padding: 10px 27px;
+}
 
+.movie_info li a:nth-of-type(1) {
+  border-radius: 0 0 0 10px;
+}
+
+.movie_info li a:nth-of-type(2) {
+  float: right;
+  margin-right: -20px;
+  border-radius: 0 0 10px 0;
+  border-left: 1px solid #BDBDBD;
+}
+
+.movie_info li a:nth-of-type(2)::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(./images/영화목록페이지/아이콘_재생.png) no-repeat 0 0/ contain;
+  top: 11px;
+  left: 18px;
+}
+
+.footer {
+  width: 100vw;
+  background: #F2F2F2;
+  padding: 53px 12%;
+
+  .footer_top {
+    margin-bottom: 43px;
+  }
+}
+
+.footer_top .txt_company {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.footer_top .btn_social {
+  float: right;
+  a {
+    display: inline-block;
+    margin-left: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+
+  a:nth-of-type(1) {
+    content: '';    
+    background-image: url(./images/SNS_아이콘/twitter.png);
+  }
+  a:nth-of-type(2) {
+    content: '';
+    background-image: url(./images/SNS_아이콘/instagram.png);
+  }
+  a:nth-of-type(3) {
+    content: '';
+    background-image: url(./images/SNS_아이콘/facebook.png);
+  }
+}
+
+.footer .footer_bottom {
+  margin-top: 43px;
+  position: relative;
+}
+
+.footer_bottom dl dt, dd {
+  display: inline;
+}
+
+.footer_bottom dl {
+  width: 60vw;
+    dt::before {
+      content: '|';
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 500;
+      margin: 0 5px 0 2px;
+    }
+
+    dd {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    dt,
+    dd:nth-of-type(1) {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+
+.footer_bottom .txt_copyright {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
 }
