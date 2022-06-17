@@ -1,0 +1,24 @@
+import React from 'react';
+// import ReactDOM from 'react-dom'; //구버전
+import { createRoot } from 'react-dom/client';
+import App from './App';
+import { Provider } from "react-redux";
+import store from "./store";
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
+    <Provider store={store}>
+        <App tab="home" />
+    </Provider>
+);
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   <>
+//     {console.log("store", { store })}
+//     <Provider store={store}>
+//       <App />
+//     </Provider>
+//   </>
+// );

@@ -191,7 +191,7 @@ main.wrapper {
 }
 
 .selected_drinks>li,
-.drink_list>li {    
+.purchased_drinks>li {    
     width: auto;
     padding: 6px 8px 7px 10px;
     background-color: #FFFFFF;
@@ -281,11 +281,11 @@ img.img_selected_cola {
     line-height: 20px;
 }
 
-.my_drink .drink_list {
+.my_drink .purchased_drinks {
     background-color: #EAE8FE;
 }
 
-.my_drink .scroll.drink_list {
+.my_drink .scroll.purchased_drinks {
     width: 306px;
     height: 364px;
     margin-top: 13px;

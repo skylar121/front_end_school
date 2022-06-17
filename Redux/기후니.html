@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>redux-practice</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+    <style>
+        .container-events {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        #input {
+            margin-right: 10px;
+        }
+
+        .list-div {
+            display: flex;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .item-div {
+            margin: 0 10px 10px 0;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container-events">
+            <label>아무거나 입력하세요! :
+                <input id="input" type="text" />
+            </label>
+            <button id="updateBtn" type="button">input 업데이트 버튼</button>
+            <button id="redBtn" type="button">red</button>
+            <button id="greenBtn" type="button">green</button>
+            <button id="blueBtn" type="button">blue</button>
+        </div>
+        <ul class="list-div">
+            <div class="item-div"></div>
+            <div class="item-div"></div>
+            <div class="item-div"></div>
+            <div class="item-div"></div>
+            <div class="item-div"></div>
+            <div class="item-div"></div>
+        </ul>
+    </div>
+    <script>
+        // Selectors
+        const input = document.querySelector("#input");
+        const redBtn = document.querySelector("#redBtn");
+        const greenBtn = document.querySelector("#greenBtn");
+        const blueBtn = document.querySelector("#blueBtn");
+
+        // Events
+        input.addEventListener("keyup", handleChangeText);
+        redBtn.addEventListener("click", handleChangeBorderColor);
+        greenBtn.addEventListener("click", handleChangeBorderColor);
+        blueBtn.addEventListener("click", handleChangeBorderColor);
+
+        // Redux
+        const store = Redux.createStore(
+            reducer,
+            window.__REDUX_DEVTOOLS_EXTENSION__ &&
+            window.__REDUX_DEVTOOLS_EXTENSION__()
+        );
+
+        function reducer(state, action) {
+            if (state === undefined) {
+                return { color: "black", inputValue: "" };
+            }
+
+            if (action.type === "CHANGE_BORDER_COLOR") {
+                let newState = { ...state, color: action.color };
+                return newState;
+            }
+
+            if (action.type === "CHANGE_INPUT") {
+                let newState = { ...state, inputValue: action.inputValue };
+                return newState;
+            }
+        }
+
+        store.subscribe(divsBorderColorChange);
+        store.subscribe(divsInputChange);
+
+        // Functions
+        function handleChangeText(e) {
+            const text = e.target.value;
+            store.dispatch({ type: "CHANGE_INPUT", inputValue: text });
+        }
+
+        function handleChangeBorderColor(e) {
+            const id = e.target.id;
+            const [color] = id.split("Btn");
+            store.dispatch({ type: "CHANGE_BORDER_COLOR", color });
+        }
+
+        function divsBorderColorChange() {
+            const state = store.getState();
+
+            const listDiv = document.querySelector(".list-div");
+            const itemDivs = listDiv.children;
+
+            Array.prototype.forEach.call(itemDivs, (element) => {
+                element.style.borderColor = state.color;
+            });
+        }
+
+        function divsInputChange() {
+            const state = store.getState();
+            const divs = document.querySelectorAll(".list-div > div");
+            divs.forEach((element) => {
+                element.innerHTML = state.inputValue;
+            });
+        }
+    </script>
+</body>
+
+</html>

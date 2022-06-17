@@ -1,0 +1,23 @@
+import { useState, useEffect, useLayoutEffect } from 'react'
+
+function App() {
+  const [value, setValue] = useState(100);
+  
+  useEffect(() => {
+    if (value >= 1000) {
+      setValue(300);
+    }
+  }, [value]);
+  
+  return (
+    <div>
+        {/* 애니메이션이 있으면 useEffect를 써도 문제가 없는것처럼 보임 */}
+      {/* <div style={{ width: value, height: value, backgroundColor: 'blue', transition: '1s all' }}></div> */}
+      <div style={{ width: value, height: value, backgroundColor: 'blue' }}></div>
+      <button onClick={() => {setValue(1000)}}>커져랏!</button>
+      <button onClick={() => {setValue(200)}}>작아져랏!</button>
+    </div>
+  )
+}
+
+export default App;
