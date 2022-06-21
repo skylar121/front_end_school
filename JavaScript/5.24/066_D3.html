@@ -8,7 +8,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-    <svg width="500" height="500"></svg>
+    <svg width="1000" height="1000"></svg>
     <script>
         const sampleData = [100, 10, 30, 50, 10, 70, 200, 90];
         const svg = d3.select('svg');
@@ -18,7 +18,7 @@
             .attr('height', data)
             .attr('width', 30)
             .attr('x', 40 * index + 100)//막대 생성좌표 x 막대의 좌측
-            .attr('y', 300 - data + 100)//막대 생성 좌표 y 막대의 윗부분
+            .attr('y', 400 - data)//막대 생성 좌표 y 막대의 윗부분
         })
     </script>
 </body>
