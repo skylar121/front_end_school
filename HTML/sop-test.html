@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello!! this is same origin test!!</h1>
+    <iframe class="test" src="/sop-test.html" frameborder="0"></iframe>
+    <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/WPdWvnAAurg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <script>
+        const x = document.querySelector('.test');
+        const y = document.querySelector('.youtube');
+
+        // contentDocument : iframe의 속성, 만약 iframe 과 iframe's parent document 가 같은 origin을 가진다면 iframe의 document 객체를 반환합니다.
+        // 프로토콜은 https로 같은데 호스트가 다르다 (html파일이랑 유투브)
+        // sop 때문에 유툽 iframe은 상호작용 할수가 없음
+        // SOP에서의 출처 의미:
+        // 두 URL의
+        // 1.  프로토콜, 
+        // 2. 포트(명시한 경우)
+        // 3. 호스트 
+        // 리소스를 가져와서 사용하는 것은 되지만, 내 문서에 영향을 미치도록 상호작용하는건 안된다
+        // crossorigin 써주면 상호작용 하겠다는 것
+        x.onload = () => {
+            console.log('same origin : ', x.contentDocument);
+        } // 같으면 #document로 잘 나옴
+
+        y.onload = () => {
+            console.log('other origin : ', y.contentDocument);
+        }
+    </script>
+</body>
+</html>
