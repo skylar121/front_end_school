@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    const userData = {
+      "id": 11,
+      "name": "Hello World",
+      "username": "hello.world",
+      "email": "hellow.world@async.com"
+    }
+
+    const result = await axios.post('https://jsonplaceholder.typicode.com/users', userData)
+    console.log(result.data); // {"id": 11,"name": "Hello World","username": "hello.world", "email": "hellow.world@async.com"}
+    console.log(result.data.headers['content-type']); // 'application/json;charset=utf-8'
+
+    // jsonConfig = {
+    //  headers: {
+    //  'content-type': 'application/json'
+    //   }
+    // }
+    // const result = await axios.post('https://jsonplaceholder.typicode.com/users', userData, jsonConfig);
+    // console.log(result.headers['content-type']); // 'application/json'
+
+    // 이미지 (이미지를 POST하는 라우트 없어서 안됨)
+    const img = {
+      "albumId": 1,
+      "id": 51,
+      "title": "et inventore quae ut tempore eius voluptatum",
+      "url": "https://via.placeholder.com/600/9e59da",
+      "thumbnailUrl": "https://via.placeholder.com/150/9e59da"
+    }
+
+    const imgConfig = {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    }
+
+    const result = await axios.post('https://jsonplaceholder.typicode.com/albums/1/photos', img, imgConfig);
+    console.log(result);
+    console.log(result.data);
+    console.log(result.data.headers['content-type']);
+
+  </script>
+</body>
+
+</html>
